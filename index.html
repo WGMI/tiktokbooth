@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="content-area">
+                <h1 class="game-title"><span style="font-size: 1.5em;">OG</span><br>VIBE<br>CHECK</h1>
+                <p class="game-subtitle">Discover Your Music Personality<br>Ready To Play?</p>
+                <button id="start-btn" class="start-button">Tap to start</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen (hidden initially) -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <h1 class="quiz-title">OG<br>VIBE<br>CHECK</h1>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <div class="swipe-indicator left">←</div>
+                <div class="swipe-indicator right">→</div>
+                
+                <div id="question-card" class="question-card">
+                    <div class="question-box">
+                        <h2 id="question-text" class="question-text">Loading question...</h2>
+                    </div>
+                    <div class="instructions">
+                        <p>select answer then swipe or click arrows for next question</p>
+                    </div>
+                    
+                    <!-- Desktop navigation buttons -->
+                    <div class="nav-buttons-container">
+                        <button class="nav-button nav-left" id="prev-btn">
+                            <img src="images/left.png" alt="Previous" class="nav-arrow">
+                        </button>
+                        <button class="nav-button nav-right" id="next-btn">
+                            <img src="images/right.png" alt="Next" class="nav-arrow">
+                        </button>
+                    </div>
+                    
+                    <div id="options-container" class="options-container">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                <!-- Footer space -->
+            </div>
+        </div>
+
+        <!-- Loading Screen (hidden initially) -->
+        <div id="loading-screen" class="screen">
+            <div class="loading-container">
+                <h1 class="loading-title">OG<br>VIBE<br>CHECK</h1>
+                
+                <div class="loading-banner">
+                    <p>Lets get your personality</p>
+                </div>
+                
+                <div class="loading-animation">
+                    <img src="images/loading.gif" alt="Loading" class="loading-gif">
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen (hidden initially) -->
+        <div id="results-screen" class="screen">
+            <div class="results-container">
+                <h1 class="results-title">OG<br>VIBE<br>CHECK</h1>
+                
+                <div class="personality-banner">
+                    <p>Your Personality Reveal</p>
+                </div>
+                
+                <div class="instructions">
+                    <div class="info-icon">i</div>
+                    <p>Now enter your booth and dance to your vibe</p>
+                </div>
+                
+                                    <div class="icon-row">
+                        <div class="icon-box">
+                            <img id="left-icon" class="icon" src="images/icons/chill.png" alt="Chill Icon">
+                        </div>
+                        <div class="icon-box main-icon">
+                            <img id="center-icon" class="icon" src="images/icons/vibe.png" alt="Vibe Icon">
+                        </div>
+                        <div class="icon-box">
+                            <img id="right-icon" class="icon" src="images/icons/groove.png" alt="Groove Icon">
+                        </div>
+                    </div>
+                
+                <div class="personality-type">
+                                            <span id="final-score">Banger OG</span>
+                </div>
+                
+                <div class="personality-banner">
+                    <p id="score-message">For those who groove to Afrobeats, Amapiano, and the latest dance trends.</p>
+                </div>
+                
+                <button id="play-again-btn" class="start-button">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
