@@ -98,7 +98,7 @@ body {
 
 /* Typography */
 .game-title {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -169,11 +169,11 @@ body {
 }
 
 .quiz-title {
-    font-size: 1.5rem;
+    font-size: 3.2rem;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
     line-height: 1.1;
     letter-spacing: 1px;
     text-align: center;
@@ -203,7 +203,7 @@ body {
     align-items: center;
     padding: 1rem 2rem;
     text-align: center;
-    padding-top: 4rem;
+    padding-top: 6rem;
     position: relative;
     overflow: hidden;
     min-height: 350px;
@@ -334,6 +334,7 @@ body {
     background-repeat: no-repeat;
     background-color: transparent;
     padding: 1.5rem 1.2rem;
+    margin-top: 2.8rem;
     margin-bottom: 0.8rem;
     border-radius: 15px;
     position: relative;
@@ -466,7 +467,7 @@ body {
 }
 
 .loading-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -527,7 +528,7 @@ body {
 }
 
 .results-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -609,8 +610,24 @@ body {
 /* Mobile responsive adjustments */
 @media (max-width: 480px) {
     .game-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
         letter-spacing: 1px;
+    }
+    
+    .quiz-title {
+        font-size: 2.8rem;
+    }
+    
+    .question-container {
+        padding-top: 5rem;
+    }
+    
+    .loading-title {
+        font-size: 2.5rem;
+    }
+    
+    .results-title {
+        font-size: 2.5rem;
     }
     
     .game-subtitle {
