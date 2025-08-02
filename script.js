@@ -359,9 +359,9 @@ function showResults() {
 // Get description for OG type
 function getOgTypeDescription(ogType) {
     const descriptions = {
-        "254 OG": "For those who vibe to Hip Hop, RnB, and chart-topping Icons across the world.",
-        "Banger OG": "For those who groove to Afrobeats, Amapiano, and the latest dance trends.",
-        "Certified OG": "For those who chill to Neo Soul, RnB, and laid-back vibes."
+        "254 OG": "You are a Kenyan music lover",
+        "Banger OG": "For those who vibe to Hip Hop, RnB, and chart-topping Icons across the world.",
+        "Certified OG": "For those who groove to Afrobeats, Amapiano, and the latest dance trends."
     };
     return descriptions[ogType] || "You're a unique vibe!";
 }
@@ -382,9 +382,13 @@ function getRandomIcons(dominantOgType) {
         centerIcon = 'images/icons/chill.png';
     }
     
-    // Use static icons for left and right positions
-    const leftIcon = 'images/icons/chill.png';
-    const rightIcon = 'images/icons/vibe.png';
+    // Get the other two icons that are different from the center icon
+    const allIcons = ['images/icons/chill.png', 'images/icons/vibe.png', 'images/icons/groove.png'];
+    const otherIcons = allIcons.filter(icon => icon !== centerIcon);
+    
+    // Use the two remaining icons for left and right positions
+    const leftIcon = otherIcons[0];
+    const rightIcon = otherIcons[1];
     
     return { leftIcon, centerIcon, rightIcon };
 }
