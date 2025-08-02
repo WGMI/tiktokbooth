@@ -231,10 +231,10 @@ function loadQuestion() {
         button.dataset.index = index;
         
         // Create option number flag
-        const numberFlag = document.createElement('div');
-        numberFlag.className = 'option-number';
-        numberFlag.textContent = index + 1;
-        button.appendChild(numberFlag);
+        // const numberFlag = document.createElement('div');
+        // numberFlag.className = 'option-number';
+        // numberFlag.textContent = index + 1;
+        // button.appendChild(numberFlag);
         
         // Create option text
         const optionText = document.createElement('div');
