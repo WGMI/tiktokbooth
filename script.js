@@ -5,139 +5,139 @@ let selectedAnswer = null;
 let questionsAnswered = false;
 const questionsPerSlide = 3;
 let selectedQuestions = [];
-let ogTypeCounts = { "245 OG": 0, "Banger OG": 0, "Certified OG": 0 };
+let ogTypeCounts = { "254 OG": 0, "Banger OG": 0, "Certified OG": 0 };
 
 // Sample quiz questions (you can replace these with your own)
 const questions = [
     {
         question: "What's your go-to matatu vibe?",
         options: ["I hum and nod the whole ride", "I record Snap stories with my headphones on", "I fall asleep and miss my stop"],
-        ogTypes: ["245 OG", "Banger OG", "Certified OG"]
+        ogTypes: ["254 OG", "Banger OG", "Certified OG"]
     },
     {
         question: "How do you react when your jam comes on in a club?",
         options: ["Scream and dance like I'm on stage", "Nod and vibe with a drink in hand", "Grab friends for a formation dance"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "What's your chips masala side dish of choice?",
         options: ["Smokie pasua with guac", "Kachumbari and chili", "Nothing. The chips are the moment"],
-        ogTypes: ["245 OG", "Banger OG", "Certified OG"]
+        ogTypes: ["254 OG", "Banger OG", "Certified OG"]
     },
     {
         question: "Your ringtone is…",
         options: ["A 'kabambe' ring, and I still jump", "A trap beat", "A Kapuka throwback"],
-        ogTypes: ["Certified OG", "Banger OG", "245 OG"]
+        ogTypes: ["Certified OG", "Banger OG", "254 OG"]
     },
     {
         question: "How do you pass time in traffic?",
         options: ["Lip sync and act out music videos", "Listen to a curated Spotify playlist", "Freestyle in my head"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "Your favorite TikTok trend?",
         options: ["Dance challenges all day", "Funny skits and memes", "Sound remixes & edits"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "Your ideal concert outfit includes…",
         options: ["Sunglasses at night", "Comfy sneakers, music first", "Drip from head to toe"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "What's the best way to listen to music?",
         options: ["Loudspeaker, everyone must vibe", "Noise-canceling headphones", "In the car with bass maxed"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "Do you clap after your own dance moves?",
         options: ["Of course! Give me my flowers", "Only if the squad is watching", "Nope, I keep it cool"],
-        ogTypes: ["245 OG", "Banger OG", "Certified OG"]
+        ogTypes: ["254 OG", "Banger OG", "Certified OG"]
     },
     {
         question: "How do you walk past a reflective window?",
         options: ["Pose like I'm in a fashion show", "Quick glance, adjust my hair", "Don't even look"],
-        ogTypes: ["245 OG", "Banger OG", "Certified OG"]
+        ogTypes: ["254 OG", "Banger OG", "Certified OG"]
     },
     {
         question: "Your cat walks into the room, you…",
         options: ["Go 'psss psss'", "Ignore it, but watch it like a villain", "Start singing to it"],
-        ogTypes: ["Certified OG", "Banger OG", "245 OG"]
+        ogTypes: ["Certified OG", "Banger OG", "254 OG"]
     },
     {
         question: "Which Kenyan artist is your forever fave?",
         options: ["Sauti Sol", "Sanaipie Tande", "Nameless"],
-        ogTypes: ["Certified OG", "Banger OG", "245 OG"]
+        ogTypes: ["Certified OG", "Banger OG", "254 OG"]
     },
     {
         question: "A stranger drops bars in a mat?",
         options: ["Join in", "Secretly rate them", "Pull out your phone and record"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "What do you do after hearing 'Amapiano to the world!'?",
         options: ["Break into that log drum shuffle", "Smile and keep sipping", "Shout 'Sponono!' and dance"],
-        ogTypes: ["Banger OG", "Certified OG", "245 OG"]
+        ogTypes: ["Banger OG", "Certified OG", "254 OG"]
     },
     {
         question: "What's your midnight jam?",
         options: ["Kapuka nostalgia", "Afrobeats for the soul", "RnB meets trap"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "You walk into a room and the music is off. You…",
         options: ["Start a beat with your mouth", "Open Spotify immediately", "Enjoy the silence"],
-        ogTypes: ["245 OG", "Banger OG", "Certified OG"]
+        ogTypes: ["254 OG", "Banger OG", "Certified OG"]
     },
     {
         question: "Your squad wants to dance but you're tired?",
         options: ["Hype them from the side", "Get up, lead the dance", "Just vibe with your cup"],
-        ogTypes: ["Certified OG", "245 OG", "Banger OG"]
+        ogTypes: ["Certified OG", "254 OG", "Banger OG"]
     },
     {
         question: "Pick a weekend vibe:",
         options: ["Blankets and Wine", "Gondwana", "Old School RnB Brunch"],
-        ogTypes: ["Certified OG", "Banger OG", "245 OG"]
+        ogTypes: ["Certified OG", "Banger OG", "254 OG"]
     },
     {
         question: "Your favourite Kenyan phrase?",
         options: ["Aki si this jam slaps", "Ebu replay hiyo chorus", "Sasa hiyo ni banger bro"],
-        ogTypes: ["Certified OG", "245 OG", "Banger OG"]
+        ogTypes: ["Certified OG", "254 OG", "Banger OG"]
     },
     {
         question: "In the club, you're most likely to be…",
         options: ["On the dancefloor", "At the bar, nodding", "Switching between groups"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "How do you handle heartbreak?",
         options: ["Old school RnB on repeat", "Beyoncé + Meg = recovery plan", "Sing loudly and dance it off"],
-        ogTypes: ["Certified OG", "Banger OG", "245 OG"]
+        ogTypes: ["Certified OG", "Banger OG", "254 OG"]
     },
     {
         question: "What's your guilty pleasure song?",
         options: ["Kapuka from 2005", "Boy band ballads", "That viral TikTok hit"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "Your music playlist name would be…",
         options: ["My Soft Life Soundtrack", "Certified Club Hitlist", "Vibe Tingz"],
-        ogTypes: ["Certified OG", "Banger OG", "245 OG"]
+        ogTypes: ["Certified OG", "Banger OG", "254 OG"]
     },
     {
         question: "Your house party role?",
         options: ["DJ or aux plug", "Making TikToks in the corner", "Providing snacks and vibes"],
-        ogTypes: ["Banger OG", "245 OG", "Certified OG"]
+        ogTypes: ["Banger OG", "254 OG", "Certified OG"]
     },
     {
         question: "How many playlists do you have?",
         options: ["Just one long one", "Too many to count", "Depends on the mood"],
-        ogTypes: ["Certified OG", "Banger OG", "245 OG"]
+        ogTypes: ["Certified OG", "Banger OG", "254 OG"]
     },
     {
         question: "Which artist would you bring back for a concert?",
         options: ["E-Sir", "Aaliyah", "2Pac"],
-        ogTypes: ["245 OG", "Certified OG", "Banger OG"]
+        ogTypes: ["254 OG", "Certified OG", "Banger OG"]
     },
     {
         question: "How do you react to DJ transition fails?",
@@ -235,6 +235,12 @@ function loadQuestion() {
         button.className = 'option-button';
         button.dataset.index = index;
         
+        // Create option number flag
+        const numberFlag = document.createElement('div');
+        numberFlag.className = 'option-number';
+        numberFlag.textContent = index + 1;
+        button.appendChild(numberFlag);
+        
         // Create option text
         const optionText = document.createElement('div');
         optionText.textContent = option;
@@ -312,12 +318,16 @@ function showResults() {
         
         console.log('Dominant OG type:', dominantOgType);
         
-        // Icons are now fixed in HTML - no JavaScript updates needed
+        // Get random icons
+        const icons = getRandomIcons(dominantOgType);
+        console.log('Selected icons:', icons);
         
         // Update results screen with OG type
         const finalScoreElement = document.getElementById('final-score');
         const scoreMessageElement = document.getElementById('score-message');
-        // Icons are now fixed in HTML
+        const leftIconElement = document.getElementById('left-icon');
+        const centerIconElement = document.getElementById('center-icon');
+        const rightIconElement = document.getElementById('right-icon');
         
         if (finalScoreElement) {
             finalScoreElement.textContent = dominantOgType;
@@ -332,7 +342,15 @@ function showResults() {
         }
         
         // Update icons
-        // Icons are now fixed in HTML - no JavaScript updates needed
+        if (leftIconElement) {
+            leftIconElement.src = icons.leftIcon;
+        }
+        if (centerIconElement) {
+            centerIconElement.src = icons.centerIcon;
+        }
+        if (rightIconElement) {
+            rightIconElement.src = icons.rightIcon;
+        }
         
         showScreen(resultsScreen);
     }, 2000);
@@ -341,46 +359,35 @@ function showResults() {
 // Get description for OG type
 function getOgTypeDescription(ogType) {
     const descriptions = {
-        "245 OG": "For those who vibe to Hip Hop, RnB, and chart-topping Icons across the world.",
+        "254 OG": "For those who vibe to Hip Hop, RnB, and chart-topping Icons across the world.",
         "Banger OG": "For those who groove to Afrobeats, Amapiano, and the latest dance trends.",
         "Certified OG": "For those who chill to Neo Soul, RnB, and laid-back vibes."
     };
     return descriptions[ogType] || "You're a unique vibe!";
 }
 
-// Get random icons for results screen
-// Icons are now fixed in HTML - no random selection needed
-/*
+// Get static icons for results screen
 function getRandomIcons(dominantOgType) {
-    const allIcons = [
-        'images/icons/vibe.png',
-        'images/icons/vibe_1.png', 
-        'images/icons/vibe_2.png',
-        'images/icons/groove.png',
-        'images/icons/groove_1.png',
-        'images/icons/groove_2.png',
-        'images/icons/chill.png',
-        'images/icons/chill_1.png',
-        'images/icons/chill_2.png'
-    ];
+    // Static icon mapping based on OG type
+    let centerIcon;
     
-    // Get icons matching the dominant OG type
-    const matchingIcons = allIcons.filter(icon => icon.includes(dominantOgType.toLowerCase().split(' ')[0]));
+    if (dominantOgType === "Certified OG") {
+        centerIcon = 'images/icons/chill.png';
+    } else if (dominantOgType === "254 OG") {
+        centerIcon = 'images/icons/vibe.png';
+    } else if (dominantOgType === "Banger OG") {
+        centerIcon = 'images/icons/groove.png';
+    } else {
+        // Fallback for any other OG types
+        centerIcon = 'images/icons/chill.png';
+    }
     
-    // Get other icons (not matching the dominant type)
-    const otherIcons = allIcons.filter(icon => !icon.includes(dominantOgType.toLowerCase().split(' ')[0]));
-    
-    // Randomly select one matching icon for center
-    const centerIcon = matchingIcons[Math.floor(Math.random() * matchingIcons.length)];
-    
-    // Randomly select two other icons
-    const shuffledOthers = otherIcons.sort(() => 0.5 - Math.random());
-    const leftIcon = shuffledOthers[0];
-    const rightIcon = shuffledOthers[1];
+    // Use static icons for left and right positions
+    const leftIcon = 'images/icons/chill.png';
+    const rightIcon = 'images/icons/vibe.png';
     
     return { leftIcon, centerIcon, rightIcon };
 }
-*/
 
 // Event listeners
 startBtn.addEventListener('click', startQuiz);
