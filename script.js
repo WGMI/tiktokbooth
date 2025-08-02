@@ -10,11 +10,6 @@ let ogTypeCounts = { "254 OG": 0, "Banger OG": 0, "Certified OG": 0 };
 // Sample quiz questions (you can replace these with your own)
 const questions = [
     {
-        question: "What's your go-to matatu vibe?",
-        options: ["I hum and nod the whole ride", "I record Snap stories with my headphones on", "I fall asleep and miss my stop"],
-        ogTypes: ["254 OG", "Banger OG", "Certified OG"]
-    },
-    {
         question: "How do you react when your jam comes on in a club?",
         options: ["Scream and dance like I'm on stage", "Nod and vibe with a drink in hand", "Grab friends for a formation dance"],
         ogTypes: ["254 OG", "Certified OG", "Banger OG"]
